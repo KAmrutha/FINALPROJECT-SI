@@ -43,7 +43,7 @@ Click "Register"
 4.Create a .env file in your project root with the following keys:  
 
 AZURE_API_KEY=your_azure_api_key  
-AZURE_ENDPOINT=https://your_resource_name.cognitiveservices.azure.com/  
+AZURE_ENDPOINT=https://example.azure.com/  
 API_BASE_URL=http://localhost:5000  
 PORT=5000    
 5. Set up the API code in the app.js file
@@ -89,7 +89,7 @@ URL: `http://157.230.209.216:5000/api/vision/analyze`
 Method: POST  
 Request Body:  
 {  
-  "imageUrl": "https://ncartmuseum.org/wp-content/uploads/2024/11/Winter-Slow-Art-12-18-24-by-Brye-Senor-scaled.jpg"
+  "imageUrl": "https://ncartmuseum.org/wp-content/uploads/2024/11/Winter-Slow-Art-12-18-24-by-Brye-Senor-scaled.jpg"  
 }  
  # Response  
  Success Response: StatusCode:'200 OK'   
@@ -353,7 +353,7 @@ URL: `http://157.230.209.216:5000/api/vision/tags`
 Method: POST  
 Request Body:  
 {  
-  "imageUrl": "https://ncartmuseum.org/wp-content/uploads/2024/11/Winter-Slow-Art-12-18-24-by-Brye-Senor-scaled.jpg"
+  "imageUrl": "https://ncartmuseum.org/wp-content/uploads/2024/11/Winter-Slow-Art-12-18-24-by-Brye-Senor-scaled.jpg"  
 }  
  # Response  
  Success Response: StatusCode:'200 OK'  
@@ -434,7 +434,7 @@ URL: `http://157.230.209.216:5000/api/vision/objects`
 Method: POST  
 Request Body:  
 {  
-  "imageUrl": "https://ncartmuseum.org/wp-content/uploads/2024/11/Winter-Slow-Art-12-18-24-by-Brye-Senor-scaled.jpg"
+  "imageUrl": "https://ncartmuseum.org/wp-content/uploads/2024/11/Winter-Slow-Art-12-18-24-by-Brye-Senor-scaled.jpg"  
 }  
  # Response      
  Success Response: StatusCode:'200 OK'     
@@ -545,7 +545,7 @@ URL: `http://157.230.209.216:5000/api/vision/describe`
 Method: POST  
 Request Body:  
 {  
-  "imageUrl": "https://ncartmuseum.org/wp-content/uploads/2024/11/Winter-Slow-Art-12-18-24-by-Brye-Senor-scaled.jpg"
+  "imageUrl": "https://ncartmuseum.org/wp-content/uploads/2024/11/Winter-Slow-Art-12-18-24-by-Brye-Senor-scaled.jpg"  
 }  
  # Response      
  Success Response: StatusCode:'200 OK'   
@@ -587,7 +587,7 @@ URL: `http://157.230.209.216:5000/api/vision/text`
 Method: POST  
 Request Body:  
 {  
-  "imageUrl": "https://ncartmuseum.org/wp-content/uploads/2024/11/Winter-Slow-Art-12-18-24-by-Brye-Senor-scaled.jpg"
+  "imageUrl": "https://ncartmuseum.org/wp-content/uploads/2024/11/Winter-Slow-Art-12-18-24-by-Brye-Senor-scaled.jpg"  
 }  
  # Response      
  Success Response: StatusCode:'200 OK'   
@@ -613,7 +613,7 @@ URL: `http://157.230.209.216:5000/api/vision/faces`
 Method: POST  
 Request Body:  
 {  
-  "imageUrl": "https://ncartmuseum.org/wp-content/uploads/2024/11/Winter-Slow-Art-12-18-24-by-Brye-Senor-scaled.jpg"
+  "imageUrl": "https://ncartmuseum.org/wp-content/uploads/2024/11/Winter-Slow-Art-12-18-24-by-Brye-Senor-scaled.jpg"  
 }  
  # Response       
  Success Response: StatusCode:'200 OK'    
@@ -683,7 +683,7 @@ URL: `http://157.230.209.216:5000/api/vision/colors`
 Method: POST  
 Request Body:  
 {  
-  "imageUrl": "https://ncartmuseum.org/wp-content/uploads/2024/11/Winter-Slow-Art-12-18-24-by-Brye-Senor-scaled.jpg"
+  "imageUrl": "https://ncartmuseum.org/wp-content/uploads/2024/11/Winter-Slow-Art-12-18-24-by-Brye-Senor-scaled.jpg"  
 }  
  # Response  
  Success Response: StatusCode:'200 OK'   
