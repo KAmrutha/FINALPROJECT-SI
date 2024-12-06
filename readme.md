@@ -24,7 +24,7 @@ Browse, test endpoints, and experiment with requests directly from your browser.
 1.Install Node.js (v14 or higher)
 2.Ensure you have npm installed in your system and run the following command
 
-npm install express @azure/cognitiveservices-computervision @azure/ms-rest-azure-js dotenv swagger-jsdoc swagger-ui-express
+# npm install express @azure/cognitiveservices-computervision @azure/ms-rest-azure-js dotenv swagger-jsdoc swagger-ui-express 
 
 3.Azure Cognitive Services account with the Computer Vision resource.
 ## **  When creating Azure AI services, registering for Microsoft.Cdn is required 
@@ -32,10 +32,10 @@ To register Microsoft.Cdn:
 
 In Azure Portal:
 
-Go to Subscriptions
-Select your subscription
-Click on Resource providers
-Search for "Microsoft.Cdn"
+Go to Subscriptions,
+Select your subscription,
+Click on Resource providers,
+Search for "Microsoft.Cdn",
 Click "Register" 
 ![alt text](images/image.png)
 
@@ -49,32 +49,26 @@ PORT=5000
 
 5. Set up the API code in the app.js file
 
-## commands to run the project locally
-
-node app.js
-
-The API server starts with this command and you will see the following commands in the terminal to access
-
-Server running on `http://localhost:5000/`
-API documentation available at `http://localhost:5000/api-docs`
-
-## steps to run the project with pm2
+## Steps to run the project with pm2
 
 ## Prerequisites
 
-GitHub account with your project repository
-DigitalOcean account
-Node.js and npm installed on your local machine
+1.GitHub account with your project repository
+2.DigitalOcean account
+3.Node.js and npm installed on your local machine
 
 ## Deployment Steps
 1.Push your project to GitHub
 2.Log in to your DigitalOcean account and create a new Droplet
 3.Connect to your Droplet via SSH and create a project directory
        mkdir foldername
-4.Clone your repository,install all the dependencies and set up the application
+4.Clone your repository
         git clone https://github.com/username/repository.git
-5.Start your application using PM2
+5.Install all the dependencies and set up the application
+6.Start your application using PM2
         pm2 start app.js
+
+![alt text](images/pm2.png)
 
 It will be accessible at 
 Server at `http://157.230.209.216:5000/`
