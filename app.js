@@ -328,6 +328,7 @@ app.get('/', (req, res) => {
     res.json({
         message: "Welcome to Azure AI Image Analysis API",
         documentation: `${process.env.API_BASE_URL || 'http://157.230.209.216:5000/'}/api-docs`,
+        note: "All endpoints need to be tested using Postman.",
         endpoints: {
             analyze: "/api/vision/analyze",
             tags: "/api/vision/tags",

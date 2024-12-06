@@ -6,46 +6,46 @@ Welcome to the Azure AI Image Analysis API, a powerful tool for analyzing images
 
 This API is Developed on the Express.js framework, this API seamlessly incorporates with Azure Cognitive Services, providing robust capabilities for image analysis.
 
-The Azure AI Image Analysis API enables developers to:
+The Azure AI Image Analysis API enables developers to:  
 
-Extract detailed information from images.
-Detect and recognize objects, faces, tags, and colors.
-Recognize printed text and landmarks.
-Generate image descriptions.
+Extract detailed information from images.  
+Detect and recognize objects, faces, tags, and colors.  
+Recognize printed text and landmarks.  
+Generate image descriptions.  
 
-Access the Swagger UI for interactive API documentation:
-`http://157.230.209.216:5000/api-docs/`
+Access the Swagger UI for interactive API documentation:  
+`http://157.230.209.216:5000/api-docs/`  
 
 Browse, test endpoints, and experiment with requests directly from your browser.
 
 ## Setup and Requirements
 ## Prerequisites
 
-1.Install Node.js (v14 or higher)
-2.Ensure you have npm installed in your system and run the following command
+1.Install Node.js (v14 or higher)  
+2.Ensure you have npm installed in your system and run the following command  
 
-# npm install express @azure/cognitiveservices-computervision @azure/ms-rest-azure-js dotenv swagger-jsdoc swagger-ui-express 
+# npm install express @azure/cognitiveservices-computervision @azure/ms-rest-azure-js dotenv swagger-jsdoc swagger-ui-express   
 
-3.Azure Cognitive Services account with the Computer Vision resource.
-## **  When creating Azure AI services, registering for Microsoft.Cdn is required 
-To register Microsoft.Cdn:
+3.Azure Cognitive Services account with the Computer Vision resource.  
+## **  When creating Azure AI services, registering for Microsoft.Cdn is required  
+To register Microsoft.Cdn:  
 
-In Azure Portal:
+In Azure Portal:  
 
-Go to Subscriptions,
-Select your subscription,
-Click on Resource providers,
-Search for "Microsoft.Cdn",
-Click "Register" 
+Go to Subscriptions,  
+Select your subscription,  
+Click on Resource providers,  
+Search for "Microsoft.Cdn",  
+Click "Register"   
 ![alt text](images/image.png)
 
 ## Environment Variables
-4.Create a .env file in your project root with the following keys:
+4.Create a .env file in your project root with the following keys:  
 
-AZURE_API_KEY=your_azure_api_key
-AZURE_ENDPOINT=https://your_resource_name.cognitiveservices.azure.com/
-API_BASE_URL=http://localhost:5000
-PORT=5000
+AZURE_API_KEY=your_azure_api_key  
+AZURE_ENDPOINT=https://your_resource_name.cognitiveservices.azure.com/  
+API_BASE_URL=http://localhost:5000  
+PORT=5000    
 
 5. Set up the API code in the app.js file
 
@@ -53,28 +53,31 @@ PORT=5000
 
 ## Prerequisites
 
-1.GitHub account with your project repository
-2.DigitalOcean account
-3.Node.js and npm installed on your local machine
+1.GitHub account with your project repository  
+2.DigitalOcean account  
+3.Node.js and npm installed on your local machine  
 
 ## Deployment Steps
-1.Push your project to GitHub
-2.Log in to your DigitalOcean account and create a new Droplet
-3.Connect to your Droplet via SSH and create a project directory
-       mkdir foldername
-4.Clone your repository
-        git clone https://github.com/username/repository.git
-5.Install all the dependencies and set up the application
-6.Start your application using PM2
-        pm2 start app.js
+1.Push your project to GitHub  
+2.Log in to your DigitalOcean account and create a new Droplet  
+3.Connect to your Droplet via SSH and create a project directory  
+       mkdir foldername  
+4.Clone your repository  
+        git clone https://github.com/username/repository.git  
+5.Install all the dependencies and set up the application  
+6.Start your application using PM2  
+        pm2 start app.js  
 
 ![alt text](images/pm2.png)
 
-It will be accessible at 
-Server at `http://157.230.209.216:5000/`
-API Documentation at `http://157.230.209.216:5000/api-docs/`
+It will be accessible at     
+Server at `http://157.230.209.216:5000/`  
+API Documentation at `http://157.230.209.216:5000/api-docs/`  
 
-## Endpoints
+## Endpoints testing using Postman
+
+Now we will test all the endpoints using postman. Install the Postman application in your system and follow the steps.
+
 ## 1. analyze : /api/vision/analyze
 
 The endpoint processes images to extract insights such as object detection, scene categorization, facial recognition, and content moderation. It provides detailed descriptions, tags, and metadata to enhance image analysis and automation.
@@ -83,15 +86,15 @@ The endpoint processes images to extract insights such as object detection, scen
 
 # Request
 
-URL: `http://157.230.209.216:5000/api/vision/analyze`
-Method: POST
-Request Body:
+URL: `http://157.230.209.216:5000/api/vision/analyze`  
+Method: POST  
+Request Body:  
 {
   "imageUrl": "https://ncartmuseum.org/wp-content/uploads/2024/11/Winter-Slow-Art-12-18-24-by-Brye-Senor-scaled.jpg"
 }
  # Response  
- Success Response: StatusCode:'200 OK' 
- # Response body
+ Success Response: StatusCode:'200 OK'   
+ # Response body  
  {
     "categories": [
         {
@@ -339,22 +342,22 @@ Request Body:
     },
     "modelVersion": "2021-05-01"
 }
-# 2.tags: /api/vision/tags
+# 2.tags: /api/vision/tags  
 
-The endpoint analyzes the provided image URL and returns a list of descriptive tags representing objects, people, and settings detected in the image. Each tag includes a confidence score indicating the likelihood of its accuracy. This is useful for categorizing, searching, or organizing image content.
+The endpoint analyzes the provided image URL and returns a list of descriptive tags representing objects, people, and settings detected in the image. Each tag includes a confidence score indicating the likelihood of its accuracy. This is useful for categorizing, searching, or organizing image content.  
 
 ![alt text](images/tags.png)
 
-# Request
+# Request  
 
-URL: `http://157.230.209.216:5000/api/vision/tags`
-Method: POST
-Request Body:
+URL: `http://157.230.209.216:5000/api/vision/tags` 
+Method: POST  
+Request Body:  
 {
   "imageUrl": "https://ncartmuseum.org/wp-content/uploads/2024/11/Winter-Slow-Art-12-18-24-by-Brye-Senor-scaled.jpg"
 }
  # Response  
- Success Response: StatusCode:'200 OK' 
+ Success Response: StatusCode:'200 OK'  
 
  # Response body
  [
@@ -428,16 +431,16 @@ The endpoint detects objects in an image, providing their locations and confiden
 
 # Request
 
-URL: `http://157.230.209.216:5000/api/vision/objects`
-Method: POST
-Request Body:
+URL: `http://157.230.209.216:5000/api/vision/objects`  
+Method: POST  
+Request Body:  
 {
   "imageUrl": "https://ncartmuseum.org/wp-content/uploads/2024/11/Winter-Slow-Art-12-18-24-by-Brye-Senor-scaled.jpg"
 }
- # Response  
- Success Response: StatusCode:'200 OK' 
+ # Response      
+ Success Response: StatusCode:'200 OK'     
 
- # Response body
+ # Response body  
 
  {
     "objects": [
@@ -531,23 +534,23 @@ Request Body:
     "modelVersion": "2021-04-01"
 }
 
-# 4.describe: /api/vision/describe
+# 4.describe: /api/vision/describe  
 
 The /api/vision/describe endpoint generates a human-readable description of an image, including key tags and captions with confidence scores. In this example, the image was described as "a group of people looking at a sculpture in a museum" with related tags like "person" and "room."
 
 ![alt text](images/describe.png)
 
-# Request
+# Request  
 
-URL: `http://157.230.209.216:5000/api/vision/describe`
-Method: POST
-Request Body:
+URL: `http://157.230.209.216:5000/api/vision/describe`  
+Method: POST  
+Request Body:  
 {
   "imageUrl": "https://ncartmuseum.org/wp-content/uploads/2024/11/Winter-Slow-Art-12-18-24-by-Brye-Senor-scaled.jpg"
 }
- # Response  
- Success Response: StatusCode:'200 OK' 
- # Response body
+ # Response      
+ Success Response: StatusCode:'200 OK'   
+ # Response body  
 
  {
     "tags": [
@@ -573,23 +576,23 @@ Request Body:
 }
 
 
-# 5.text: /api/vision/text
+# 5.text: /api/vision/text  
 
 The /api/vision/text endpoint uses Optical Character Recognition (OCR) to detect and extract printed text from images, including details like language, text angle, and orientation. In cases where no text is detected, the response provides metadata and model version information. It’s ideal for automating workflows that require text extraction from images.
 
 ![alt text](images/text.png)
 
-# Request
+# Request  
 
-URL: `http://157.230.209.216:5000/api/vision/text`
-Method: POST
-Request Body:
+URL: `http://157.230.209.216:5000/api/vision/text`  
+Method: POST  
+Request Body:  
 {
   "imageUrl": "https://ncartmuseum.org/wp-content/uploads/2024/11/Winter-Slow-Art-12-18-24-by-Brye-Senor-scaled.jpg"
 }
- # Response  
- Success Response: StatusCode:'200 OK' 
- # Response body
+ # Response      
+ Success Response: StatusCode:'200 OK'   
+ # Response body  
 
  {
     "language": "unk",
@@ -599,23 +602,23 @@ Request Body:
     "modelVersion": "2021-04-01"
 }
 
-# 6.faces: /api/vision/faces
+# 6.faces: /api/vision/faces  
 
 The /api/vision/faces endpoint detects faces in an image and returns their locations as bounding rectangles. Each detected face is represented by its position (left, top) and dimensions (width, height). This endpoint is useful for applications involving facial recognition, analysis, or tagging in visual content.
 
 ![alt text](images/faces.png)
 
-# Request
+# Request  
 
-URL: `http://157.230.209.216:5000/api/vision/faces`
-Method: POST
-Request Body:
+URL: `http://157.230.209.216:5000/api/vision/faces`  
+Method: POST  
+Request Body:  
 {
   "imageUrl": "https://ncartmuseum.org/wp-content/uploads/2024/11/Winter-Slow-Art-12-18-24-by-Brye-Senor-scaled.jpg"
 }
- # Response  
- Success Response: StatusCode:'200 OK' 
- # Response body
+ # Response       
+ Success Response: StatusCode:'200 OK'    
+ # Response body  
 
  [
     {
@@ -669,23 +672,23 @@ Request Body:
 ]
 
 
-# 7.colors : /api/vision/colors
+# 7.colors : /api/vision/colors  
 
 The /api/vision/colors endpoint analyzes the color palette of an image, identifying the dominant foreground and background colors, as well as any accent colors. It also determines whether the image is black and white. This endpoint is ideal for color-based analysis in design, marketing, or image classification applications.
 
-![alt text](images/colors.png)
+![alt text](images/colors.png)  
 
-# Request
+# Request  
 
-URL: `http://157.230.209.216:5000/api/vision/colors`
-Method: POST
-Request Body:
+URL: `http://157.230.209.216:5000/api/vision/colors`  
+Method: POST  
+Request Body:  
 {
   "imageUrl": "https://ncartmuseum.org/wp-content/uploads/2024/11/Winter-Slow-Art-12-18-24-by-Brye-Senor-scaled.jpg"
 }
  # Response  
- Success Response: StatusCode:'200 OK' 
- # Response body
+ Success Response: StatusCode:'200 OK'   
+ # Response body  
 
  {
     "dominantColorForeground": "White",
@@ -702,34 +705,34 @@ Request Body:
 
 This section covers error handling for the checkImageUrl middleware and the processError function used in the API. These methods ensure robust error detection, clear responses, and better debugging during API operations.
 
-# Statuscode 400	Image URL is required	
-The imageUrl field is missing in the request payload.
-# example 
-{}
-# Response
+# Statuscode 400	Image URL is required  	
+The imageUrl field is missing in the request payload.  
+# example   
+{}  
+# Response  
 {
     "error": "Image URL is required"
-}
+}  
 
-# Statuscode 400	Invalid URL format	
-The imageUrl field is provided but does not contain a valid URL string.
-# example
+# Statuscode 400	Invalid URL format  
+The imageUrl field is provided but does not contain a valid URL string.  
+# example  
 
-{ "imageUrl": "invalid-url" }
+{ "imageUrl": "invalid-url" }  
 
-# Response
+# Response  
 {
     "error": "Invalid URL format"
-}
+}  
 
-# Status code 500	An error occurred during image analysis	
-Any internal server error (e.g., network issues, invalid Azure API credentials, or service downtime).	{ "error": "An error occurred during image analysis" }
+# Status code 500	An error occurred during image analysis  	
+Any internal server error (e.g., network issues, invalid Azure API credentials, or service downtime).	{ "error": "An error occurred during image analysis" }  
 
-# Example response
+# Example response  
 {
     "error": "An error occurred during image analysis"
-}
+}  
 
-# Conclusion
+# Conclusion  
 
-The Azure AI Image Analysis API provides a versatile suite of endpoints to analyze images for various features, including object detection, image descriptions, text recognition, face detection, and color analysis.
+The Azure AI Image Analysis API provides a versatile suite of endpoints to analyze images for various features, including object detection, image descriptions, text recognition, face detection, and color analysis.  
